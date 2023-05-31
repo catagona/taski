@@ -90,7 +90,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         # Это параметр воркфлоу, указывающий нужную версию NodeJS
-        node-version: 18
+        node-version: 18-slim
     - name: Install dependencies
       # Эта команда устанавливает зависимости для фронтенда
       run: |
@@ -99,7 +99,7 @@ jobs:
     - name: Test frontend
       # Запускаем тесты
       run: |
-        cd frontend/
+        cd frontend/src/
         npm run test
 
   build_frontend_and_push_to_docker_hub:
